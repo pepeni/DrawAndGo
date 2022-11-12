@@ -31,6 +31,8 @@ form {
     height: 40vh;
     background: #2F4858;
     border-radius: 25px;
+    width: 548px;
+    height: 700px;
 }
 button {
     background: #DAC827;
@@ -40,14 +42,20 @@ button {
     color: black;
     margin: 1em;
     line-height: 2.5em;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
 }
 
 input {
-    background-color: transparent;
+    background-color: white;
     border: none;
     padding: 1em;
     margin: 1em;
     width: 50%;
+    border-radius: 25px;
 }
 
 img {
@@ -55,7 +63,7 @@ img {
     height: 112px;
 }
 
-.login-text-1 {
+.logo-text-1 {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 300;
@@ -66,7 +74,7 @@ img {
     color: #000000;
 }
 
-.login-text-2 {
+.logo-text-2 {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 300;
@@ -75,6 +83,39 @@ img {
     text-align: center;
 
     color: #000000;
+}
+.login-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+
+
+    color: #FFFFFF;
+}
+
+.email-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: left;
+    margin-top: 100px;
+    
+    color: #FFFFFF;
+}
+
+.password-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    
+    
+    color: #FFFFFF;
 }
 
 a {
