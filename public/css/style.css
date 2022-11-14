@@ -1,5 +1,5 @@
 .container {
-    width: 100;
+    width: 100vw;
     height: 100vh;
     background: linear-gradient(90deg, #DAC827 41.18%, #141200 115.93%, rgba(218, 200, 39, 0) 115.94%);
 
@@ -19,7 +19,7 @@ body {
 }
 
 .login-container {
-    width: 50%;
+    width: 50vw;
 }
 
 form {
@@ -29,6 +29,7 @@ form {
     align-items: center;
     width: 30vw;
     height: 70vh;
+    margin-left: 7vw;
     background: #2F4858;
     border-radius: 25px;
 }
@@ -137,4 +138,35 @@ a:visited {
 
 a:hover {
     color: #DAC827;
+}
+
+@media only screen and (max-device-width: 540px) {
+    .container{
+        flex-direction: column;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 70vw;
+        height: 70vh;
+        margin-left: 15vw;
+        margin-right: 15vw;
+        margin-top: 5vw;
+    }
+    .logo-text-2 {
+        font-size: 0;
+        line-height: 0;
+    }
+    .login-container {
+        width: 100vw;
+    }
+    .click-register-1 {
+        font-size: 0;
+    }
+    .click-register-2 {
+        text-align: center;
+        font-size: 4vh;
+    }
 }
