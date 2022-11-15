@@ -1,0 +1,172 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(90deg, #DAC827 41.18%, #141200 115.93%, rgba(218, 200, 39, 0) 115.94%);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+}
+
+.logo {
+    width: 50%;
+    text-align: center;
+}
+
+.login-container {
+    width: 50vw;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    height: 70vh;
+    margin-left: 7vw;
+    background: #2F4858;
+    border-radius: 25px;
+}
+button {
+    background: #DAC827;
+    border-radius: 25px;
+    width: 70%;
+    border: none;
+    color: black;
+    margin-top: 5vh;
+    margin-bottom: 1vh;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3.5vh;
+    line-height: 5vh;
+}
+
+input {
+    background-color: white;
+    border: none;
+    padding: 1.3vh;
+    margin: 1vh;
+    width: 80%;
+    border-radius: 25px;
+    height: 5%;
+    font-size: 3vh;
+}
+
+img {
+    width: 12vh;
+    height: 12vh;
+}
+
+.logo-text-1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 7vh;
+    line-height: 8vh;
+    text-align: center;
+
+    color: #000000;
+}
+
+.logo-text-2 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 3.5vh;
+    line-height: 4vh;
+    text-align: center;
+
+    color: #000000;
+}
+.login-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 5vh;
+    line-height: 6vh;
+    margin-top: 1vh;
+
+    color: #FFFFFF;
+}
+
+.email-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3.5vh;
+    text-align: left;
+    margin-top: 9vh;
+    width: 70%;
+    color: #FFFFFF;
+}
+
+.password-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3.5vh;
+    width: 70%;
+    margin-top: 2vh;
+    
+    color: #FFFFFF;
+}
+
+
+a {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.5vh;
+    text-decoration: none;
+    margin-top: 1.6vh;
+}
+
+a:link {
+    color: #22A36D;
+}
+
+a:visited {
+    color: #22A36D;
+}
+
+a:hover {
+    color: #DAC827;
+}
+
+@media only screen and (max-device-width: 540px) {
+    .container{
+        flex-direction: column;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 70vw;
+        height: 70vh;
+        margin-left: 15vw;
+        margin-right: 15vw;
+        margin-top: 5vw;
+    }
+    .logo-text-2 {
+        font-size: 0;
+        line-height: 0;
+    }
+    .login-container {
+        width: 100vw;
+    }
+    .click-register-1 {
+        font-size: 0;
+    }
+    .click-register-2 {
+        text-align: center;
+        font-size: 4vh;
+    }
+}
