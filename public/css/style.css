@@ -57,6 +57,7 @@ input {
     border-radius: 25px;
     height: 5%;
     font-size: 3vh;
+    font-weight: 600;
 }
 
 img {
@@ -85,7 +86,7 @@ img {
 
     color: #000000;
 }
-.login-text {
+#login-text {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -138,12 +139,16 @@ a:visited {
 
 a:hover {
     color: #DAC827;
+    cursor: pointer;
 }
 
-@media only screen and (max-device-width: 540px) {
+@media only screen and (max-device-width: 940px) {
+
     .container{
         flex-direction: column;
+        background: linear-gradient(180deg, #DAC827 24.06%, #141200 119.61%);
     }
+
     form {
         display: flex;
         flex-direction: column;
@@ -155,6 +160,11 @@ a:hover {
         margin-right: 15vw;
         margin-top: 5vw;
     }
+
+    .logo {
+        width: 100vw;
+    }
+
     .logo-text-2 {
         font-size: 0;
         line-height: 0;
@@ -162,11 +172,25 @@ a:hover {
     .login-container {
         width: 100vw;
     }
-    .click-register-1 {
+
+    #login-text {
+        margin-top: 0%;
+    }
+
+    #click-register-1 {
         font-size: 0;
     }
-    .click-register-2 {
+
+    #click-register-2 {
         text-align: center;
         font-size: 4vh;
+    }
+
+    input {
+        font-size: 2vh;
+    }
+
+    .email-text {
+        margin-top: 6vh;
     }
 }
