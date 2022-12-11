@@ -13,12 +13,12 @@ body {
     margin: 0;
 }
 
-.logo {
+#logo {
     width: 50%;
     text-align: center;
 }
 
-.login-container {
+#login-container {
     width: 50vw;
 }
 
@@ -65,7 +65,7 @@ img {
     height: 12vh;
 }
 
-.logo-text-1 {
+#logo-text-1 {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 300;
@@ -76,7 +76,7 @@ img {
     color: #000000;
 }
 
-.logo-text-2 {
+#logo-text-2 {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 300;
@@ -97,7 +97,7 @@ img {
     color: #FFFFFF;
 }
 
-.email-text {
+#email-text {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -108,7 +108,7 @@ img {
     color: #FFFFFF;
 }
 
-.password-text {
+#password-text {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -161,15 +161,15 @@ a:hover {
         margin-top: 5vw;
     }
 
-    .logo {
+    #logo {
         width: 100vw;
     }
 
-    .logo-text-2 {
+    #logo-text-2 {
         font-size: 0;
         line-height: 0;
     }
-    .login-container {
+    #login-container {
         width: 100vw;
     }
 
@@ -190,7 +190,7 @@ a:hover {
         font-size: 2vh;
     }
 
-    .email-text {
+    #email-text {
         margin-top: 6vh;
     }
 }
