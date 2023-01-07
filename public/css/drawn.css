@@ -1,0 +1,274 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: #DAC827;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+}
+
+#container-top {
+    margin-top: 3vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#container-bot {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+}
+
+#left {
+    width: 35vw;
+    margin-left: 8vw;
+    margin-right: 7vw;
+}
+
+#photo {
+    width:35vw;
+    height: 65vh;
+}
+
+#right {
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 45vw;
+    margin-right: 5vw;
+}
+
+#price-img {
+    width: 10vw;
+}
+
+#back{
+    height: 5vh;
+    margin-left: 10vw;
+    width: 40vw;
+    font-size: 5vh;
+}
+
+#arrow-back-img{
+    width: 4vh;
+    height: 4vh;
+}
+
+#back-link:hover {
+    text-decoration: underline;
+}
+
+#back-link:visited {
+    text-decoration: none;
+    color: #000000;
+}
+
+#back-link:active {
+    text-decoration: none;
+    color: #000000;
+}
+
+#back-link:link {
+    text-decoration: none;
+    color: #000000;
+}
+
+#nick { 
+    height: 5vh;
+    width: 40vw;
+    margin-right: 10vw;
+    font-size: 5vh;
+    text-align: right;
+}
+
+#description-text{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 4.5vh;
+    line-height: 4.5vh;
+    margin: 0;
+    height: 5vh;
+}
+
+#price-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 4.5vh;
+    line-height: 4.5vh;
+    margin: 0;
+}
+
+#webpage-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 4.5vh;
+    line-height: 4.5vh;
+    margin: 0;
+}
+
+#website {
+    font-size: 2vw;
+    line-height: 6vh;
+    color: #ffffff
+}
+
+#website:hover {
+    text-decoration: underline;
+    color: #DAC827
+}
+
+#website:visited {
+    text-decoration: none;
+}
+
+#website:active {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#website:link {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#community-rating-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 4.5vh;
+    line-height: 4.5vh;
+    margin: 0;
+}
+
+#user-rating {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 4.5vh;
+    line-height: 4.5vh;
+    margin: 0;
+}
+
+#drawn-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 5vh;
+    line-height: 5vh;
+}
+
+#description-content{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2vh;
+    line-height: 2vh;
+    width: 45vw;
+    height: 20vh;
+}
+
+#user-options {
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 10vh;
+}
+
+#rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#rating-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#webpage-div {
+    background: #2F4858;
+    border-radius: 25px;
+    text-align: center;
+    width:30vw;
+    margin-right: 30vw;
+    height: 6vh;
+    font-size: 5vh;
+    line-height: 5vh;
+}
+
+#price-img {
+    width: 6vh;
+}
+
+.price {
+    margin: 0;
+}
+
+#price{
+    display: flex;
+    flex-direction: row;
+}
+
+#price-div {
+    background: #2F4858;
+    border-radius: 25px;
+    margin-left: 5vw;
+    height: 8vh;
+    width: 24vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#webpage {
+    height: 10vh;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+}
+
+#community-rating{
+    height: 10vh;
+}
+
+.rating{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.star{
+    width: 4vh;
+}
+
+#i-was-there{
+    background: #7EBB4A;
+    border-radius: 25px;
+    height: 4vh;
+    width: 10vw;
+    margin-right: 10vw;
+}
+
+@media only screen and (max-device-width: 940px) {
+
+
+}
