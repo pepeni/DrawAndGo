@@ -121,7 +121,7 @@ body {
 }
 
 #website {
-    font-size: 2vw;
+    font-size: 3vmin;
     line-height: 6vh;
     color: #ffffff
 }
@@ -175,7 +175,7 @@ body {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 300;
-    font-size: 2vh;
+    font-size: 2vmin;
     line-height: 2vh;
     width: 45vw;
     height: 20vh;
@@ -211,7 +211,7 @@ body {
     width:30vw;
     margin-right: 30vw;
     height: 6vh;
-    font-size: 5vh;
+    font-size: 5vmin;
     line-height: 5vh;
 }
 
@@ -266,6 +266,7 @@ body {
     height: 4vh;
     width: 10vw;
     margin-right: 10vw;
+    font-size: 1.8vmin;
 }
 
 @media only screen and (max-device-width: 940px) {

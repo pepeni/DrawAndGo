@@ -1,0 +1,257 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: #DAC827;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+}
+
+#container-top {
+    margin-top: 3vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#container-bot {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+#records {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.record {
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 18vh;
+    background: #2F4858;
+    border-radius: 40px;
+    align-items: center;
+    margin-bottom: 3vh;
+}
+
+#left {
+    width: 10vw;
+    margin-left: 3vw;
+    margin-right: 0vw;
+}
+
+#photo {
+    width:8vw;
+    height: 16vh;
+}
+
+#right {
+    margin-left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 62vw;
+    margin-right: 5vw;
+    align-items: center;
+}
+
+
+#back{
+    height: 5vh;
+    margin-left: 10vw;
+    width: 40vw;
+    font-size: 5vh;
+}
+
+#arrow-back-img{
+    width: 4vh;
+    height: 4vh;
+}
+
+#back-link:hover {
+    text-decoration: underline;
+}
+
+#back-link:visited {
+    text-decoration: none;
+    color: #000000;
+}
+
+#back-link:active {
+    text-decoration: none;
+    color: #000000;
+}
+
+#back-link:link {
+    text-decoration: none;
+    color: #000000;
+}
+
+#nick { 
+    height: 5vh;
+    width: 40vw;
+    margin-right: 10vw;
+    font-size: 5vh;
+    text-align: right;
+}
+
+
+#browse-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 5vh;
+    line-height: 5vh;
+}
+
+#community-rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 18vh;
+    margin-right: 5vw;
+}
+
+#record-name {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2vw;
+    line-height: 2vw;
+
+    color: #FFFFFF;
+    width: 22vw;
+    line-height: 2vh;
+}
+
+#price-img {
+    width: 7vmin;
+}
+
+#price-div {
+    border-radius: 25px;
+    margin-left: 5vw;
+    height: 18vh;
+    width: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5vw;
+}
+
+
+.star{
+    width: 4vmin;
+}
+
+#i-was-there{
+    background: #7EBB4A;
+    border-radius: 25px;
+    height: 4vh;
+    width: 12vw;
+    font-size: 1.8vmin;
+}
+
+@media only screen and (max-device-width: 940px) {
+
+    #back{
+        height: 5vh;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        width: 40vw;
+        font-size: 5vh;
+    }
+
+    #browse-text {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 5vh;
+        line-height: 5vh;
+        margin: 2vh;
+    }
+
+    .record { 
+        width: 90vw;
+    }
+
+    #left {
+        width: 30vw;
+        margin-left: 5vw;
+        margin-right: 0vw;
+    }
+    
+    #photo {
+        width:30vw;
+        height: 16vh;
+    }
+    
+    #right {
+        flex-direction: column;
+        width: 50vw;
+    }
+
+    #price-img {
+        width: 7vmin;
+    }
+
+    #community-rating {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 5vh;
+        width: 100%;
+        margin-left: 5vw;
+    }
+    
+    #record-name {
+        text-align: center;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 4vmin;
+        line-height: 4vmin;
+        color: #FFFFFF;
+        margin-bottom: 1vh;
+        width: 90%;
+    }
+
+    #price-div {
+        border-radius: 25px;
+        height: 7vmin;
+        width: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+    .star{
+        width: 5vmin;
+    }
+    
+    #i-was-there{
+        background: #7EBB4A;
+        border-radius: 25px;
+        height: 4vh;
+        width: 70%;
+        font-size: 1.8vmin;
+    }
+}
