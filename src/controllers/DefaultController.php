@@ -1,13 +1,31 @@
 <?php
 
-class DefaultController {
+require_once 'AppController.php';
+
+class DefaultController extends AppController{
 
     public function index() {
-        die("index method");
+        $this->render('login');
     }
 
-    public function projects() {
-        die("projects method");
+    public function settings() {
+        $this->render('settings');
+    }
+
+    public function main_menu() {
+        $this->render('main_menu');
+    }
+
+    public function browse() {
+        $this->render('browse');
+    }
+
+    public function drawn() {
+        $this->render('drawn');
+    }
+
+    public function register() {
+        $this->render('register');
     }
 }
 

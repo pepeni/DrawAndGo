@@ -135,7 +135,7 @@ body {
 #city-select {
     width: 30vw;
     height: 7vh;
-    background: url(../img/arrow_down.svg), #7EBB4A;;
+    background: url(/public/img/arrow_down.svg), #7EBB4A;;
     border-radius: 25px;
     font-size: 4vh;
     text-align: center;

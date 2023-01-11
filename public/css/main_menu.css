@@ -90,7 +90,7 @@ img {
 #wybor{
     width: 30vw;
     height: 7vh;
-    background: url(../img/arrow_down.svg), radial-gradient(98.1% 98.1% at 50% 50%, #7EBB4A 0%, rgba(126, 187, 74, 0) 100%);
+    background: url(/public/img/arrow_down.svg), radial-gradient(98.1% 98.1% at 50% 50%, #7EBB4A 0%, rgba(126, 187, 74, 0) 100%);
     border-radius: 25px;
     font-size: 4vh;
     text-align: center;
@@ -125,21 +125,21 @@ img {
 }
 
 #options {
-    background: url(../img/wdpai4.png);
+    background: url(/public/img/wdpai4.png);
     border-radius: 25px;
     background-size: cover;
     background-position: center;
 }
 
 #draw {
-    background: url(../img/wdpai7.jpg);
+    background: url(/public/img/wdpai7.jpg);
     border-radius: 25px;
     background-size: cover;
     background-position: center;
 }
 
 #checkout {
-    background: url(../img/wdpai8.jpg);
+    background: url(/public/img/wdpai8.jpg);
     border-radius: 25px;
     background-size: cover;
     background-position: center;
@@ -216,7 +216,7 @@ img {
     #wybor{
         width: 70vw;
         height: 7vh;
-        background: url(../img/arrow_down.svg), radial-gradient(98.1% 98.1% at 50% 50%, #7EBB4A 0%, rgba(126, 187, 74, 0) 100%);
+        background: url(/public/img/arrow_down.svg), radial-gradient(98.1% 98.1% at 50% 50%, #7EBB4A 0%, rgba(126, 187, 74, 0) 100%);
         border-radius: 25px;
         font-size: 4vh;
         text-align: center;
@@ -262,21 +262,21 @@ img {
     }
     
     #options {
-        background: url(../img/wdpai4.png);
+        background: url(/public/img/wdpai4.png);
         border-radius: 25px;
         background-size: cover;
         background-position: center;
     }
     
     #draw {
-        background: url(../img/wdpai7.jpg);
+        background: url(/public/img/wdpai7.jpg);
         border-radius: 25px;
         background-size: cover;
         background-position: center;
     }
     
     #checkout {
-        background: url(../img/wdpai8.jpg);
+        background: url(/public/img/wdpai8.jpg);
         border-radius: 25px;
         background-size: cover;
         background-position: center;
