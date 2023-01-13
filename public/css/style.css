@@ -97,13 +97,24 @@ img {
     color: #FFFFFF;
 }
 
+#login-info {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2vmin;
+    line-height: 4vh;
+    margin-top: 1vh;
+
+    color: #DAC827;
+}
+
 #email-text {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 3.5vh;
     text-align: left;
-    margin-top: 9vh;
+    margin-top: 4vh;
     width: 70%;
     color: #FFFFFF;
 }

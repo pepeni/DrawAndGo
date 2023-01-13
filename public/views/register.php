@@ -13,6 +13,15 @@
         <div id="login-container">
             <form>
                 <label id="login-text">Zarejestruj się</label>
+                <label id="login-info">
+                    <?php
+                        if(isset($messeges)){
+                            foreach ($messeges as $messege) {
+                                echo $messege;
+                            }
+                        }
+                    ?>
+                </label>
                 
                 <label for="email" id="email-text">E-mail</label>
                 <input name="email" type="text" placeholder="jan.kowalski@gmail.com" required>
