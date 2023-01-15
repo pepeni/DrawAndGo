@@ -15,9 +15,9 @@
                 <label id="login-text">Zaloguj się</label>
                 <label id="login-info">
                     <?php
-                        if(isset($messeges)){
-                            foreach ($messeges as $messege) {
-                                echo $messege;
+                        if(isset($messages)){
+                            foreach ($messages as $message) {
+                                echo $message;
                             }
                         }
                     ?>
