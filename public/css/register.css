@@ -1,0 +1,223 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(90deg, #DAC827 41.18%, #141200 115.93%, rgba(218, 200, 39, 0) 115.94%);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+}
+
+#logo {
+    width: 50%;
+    text-align: center;
+}
+
+#register-container {
+    width: 50vw;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    height: 80vh;
+    margin-left: 7vw;
+    background: #2F4858;
+    border-radius: 25px;
+}
+button {
+    background: #DAC827;
+    border-radius: 25px;
+    width: 70%;
+    border: none;
+    color: black;
+    margin-top: 5vh;
+    margin-bottom: 1vh;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3.5vh;
+    line-height: 5vh;
+}
+
+input {
+    background-color: white;
+    border: none;
+    padding: 1.3vh;
+    margin: 1vh;
+    width: 80%;
+    border-radius: 25px;
+    height: 5%;
+    font-size: 3vh;
+    font-weight: 600;
+}
+
+img {
+    width: 12vh;
+    height: 12vh;
+}
+
+#logo-text-1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 7vh;
+    line-height: 8vh;
+    text-align: center;
+
+    color: #000000;
+}
+
+#logo-text-2 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 3.5vh;
+    line-height: 4vh;
+    text-align: center;
+
+    color: #000000;
+}
+#register-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 5vh;
+    line-height: 6vh;
+    margin-top: 1vh;
+
+    color: #FFFFFF;
+}
+
+#register-info {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2vmin;
+    line-height: 4vh;
+    margin-top: 1vh;
+
+    color: #DAC827;
+}
+
+#email-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3.5vh;
+    text-align: left;
+    margin-top: 4vh;
+    width: 70%;
+    color: #FFFFFF;
+}
+
+#password-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3.5vh;
+    width: 70%;
+    margin-top: 2vh;
+
+    color: #FFFFFF;
+}
+
+#nick-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3.5vh;
+    width: 70%;
+    margin-top: 2vh;
+
+    color: #FFFFFF;
+}
+
+
+a {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.5vh;
+    text-decoration: none;
+    margin-top: 1.6vh;
+}
+
+a:link {
+    color: #22A36D;
+}
+
+a:visited {
+    color: #22A36D;
+}
+
+a:hover {
+    color: #DAC827;
+    cursor: pointer;
+}
+
+@media only screen and (max-device-width: 940px) {
+
+    .container{
+        flex-direction: column;
+        background: linear-gradient(180deg, #DAC827 24.06%, #141200 119.61%);
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 70vw;
+        height: 75vh;
+        margin-left: 15vw;
+        margin-right: 15vw;
+        margin-top: 0vw;
+    }
+
+    #logo {
+        width: 100vw;
+    }
+
+    #logo-text-2 {
+        font-size: 0;
+        line-height: 0;
+    }
+    #register-container {
+        width: 100vw;
+    }
+
+    #register-text {
+        margin-top: 0%;
+    }
+
+    #click-login-1 {
+        font-size: 0;
+    }
+
+    #click-login-2 {
+        text-align: center;
+        font-size: 4vh;
+    }
+
+    input {
+        font-size: 2vh;
+    }
+
+    #email-text {
+        margin-top: 3vh;
+    }
+
+    #register-info {
+        font-size: 3vmin;
+
+    }
+}

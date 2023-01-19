@@ -12,6 +12,7 @@ Routing::get('register', 'DefaultController');
 Routing::get('browse', 'DefaultController');
 Routing::get('drawn', 'DefaultController');
 Routing::post('login', 'SecurityController');
+Routing::post('upload', 'UploadController');
 
 Routing::run($path);
 

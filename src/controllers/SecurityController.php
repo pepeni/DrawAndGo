@@ -12,7 +12,7 @@ class SecurityController extends AppController
     public function login(){
         $userRepository = new UserRepository();
 
-        if($this->isGet()){
+        if(!$this->isPost()){
             return $this->render('login');
         }
 

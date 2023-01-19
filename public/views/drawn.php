@@ -10,37 +10,36 @@
             <div id="nick">Nick123</div>
         </div>
         <div id="drawn-header">
-            <p id="drawn-text">Kościół Mariacki</p>
+            <p id="drawn-text"><?= $project->getName() ?></p>
         </div>
         <div id="container-bot">
             <div id="left">
                 <div id="photo-div">
-                    <img src="public/img/wdpai7.jpg" id="photo">
+                    <img src="public/uploads/<?= $project->getImage() ?>" id="photo">
                 </div>
             </div>
             <div id="right">
                 <div id="description">
                     <p id="description-text">Opis:</p>
-                    <p id="description-content">Kościół Mariacki jest jednym z najbardziej rozpoznawalnych
-                        zabytków Polski. Położony w centrum miasta - na krakowskim
-                        rynku przy wejściu na ulicę Floriańską. 
-                        Jest kościołem gotyckim, którego budowa przypada 
-                        na przełom XIV/XV wieku na fundamentach znajdującego 
-                        się tam wcześniej kościoła romańskiego.</p>
+                    <p id="description-content"><?= $project->getDescription() ?></p>
                 </div>
 
                 <div id="price">
                     <p id="price-text">Ceny:</p>
                     <div id="price-div">
-                        <img src="public/img/coin.svg" id="price-img">
-                        <img src="public/img/coin.svg" id="price-img">
+                        <?php
+                        for($i=0; $i<$project->getPrice(); $i++){
+                            echo '<img src="public/img/coin.svg" id="price-img">';
+                        }
+
+                        ?>
                     </div>
                 </div>
 
                 <div id="webpage">
                     <p id="webpage-text">Strona internetowa:</p>
                     <div id="webpage-div">
-                        <a href="https://mariacki.com/" id="website">Link do strony atrakcji</a>
+                        <a href="<?= $project->getWebsite() ?>" id="website">Link do strony atrakcji</a>
                     </div>
                 </div>
 

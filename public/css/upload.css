@@ -1,0 +1,193 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: #DAC827;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+}
+
+#container-top {
+    margin-top: 3vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#container-bot {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#back{
+    height: 5vh;
+    margin-left: 10vw;
+    width: 40vw;
+    font-size: 5vh;
+}
+
+#arrow-back-img{
+    width: 4vh;
+    height: 4vh;
+}
+
+#back-link:hover {
+    text-decoration: underline;
+}
+
+#back-link:visited {
+    text-decoration: none;
+    color: #000000;
+}
+
+#back-link:active {
+    text-decoration: none;
+    color: #000000;
+}
+
+#back-link:link {
+    text-decoration: none;
+    color: #000000;
+}
+
+#nick {
+    height: 5vh;
+    width: 40vw;
+    margin-right: 10vw;
+    font-size: 5vh;
+    text-align: right;
+}
+
+#upload-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 4vmin;
+    line-height: 4vh;
+}
+
+
+
+#form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    margin: 0;
+}
+
+h1{
+    text-align: center;
+    height: 4vh;
+    font-size: 4vmin;
+    margin: 0;
+    margin-bottom: 1vh;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 1em;
+    margin: 1em;
+    align-items: center;
+}
+
+#upload-input, #upload-textarea {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 1vh;
+    margin: 1vh;
+    width: 50vw;
+    align-items: center;
+}
+
+#upload-textarea{
+    height: 20vh;
+}
+
+#upload-input{
+    height: 10vh;
+}
+
+#upload-input{
+    height: 4vh;
+}
+
+
+#submit {
+    width: 12vw;
+    height: 4vh;
+    font-size: 3vh;
+    background-color: #2F4858;
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+#upload-file{
+    font-size: 2vmin;
+}
+
+.messages{
+    color: red;
+    font-size: 3vmin;
+}
+
+text{
+    margin: 0;
+}
+
+#photo-text{
+    margin: 0;
+    font-size: 2vmin;
+}
+
+.select_option{
+    width: 30vw;
+    height: 4vh;
+    font-size: 3vh;
+    text-align: center;
+
+}
+
+
+@media only screen and (max-device-width: 500px) {
+
+    #upload-input, #upload-textarea {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid gray;
+        padding: 1em;
+        margin: 1em;
+        width: 80vw;
+        align-items: center;
+        font-size: 3vmin;
+    }
+
+    #submit {
+        width: 20vw;
+        font-size: 3vmin;
+    }
+
+    #upload-input{
+        height: 4vh;
+    }
+    #upload-file{
+        font-size: 4vmin;
+    }
+}
+
