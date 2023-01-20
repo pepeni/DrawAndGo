@@ -6,29 +6,39 @@
 <body>
     <div class="container">
         <div id="container-top">
-            <div id="back"><a href="" id="back-link"><img src="public/img/arrow_back.svg" id="arrow-back-img">Wróć</a></div>
+            <div id="back">
+                <a href="
+                <?php
+                $address = trim($_SERVER['SERVER_NAME'], '_')."main_menu";
+                echo $address;
+
+                ?>
+                " id="back-link">
+                    <img src="public/img/arrow_back.svg" id="arrow-back-img">Wróć
+                </a>
+            </div>
             <div id="nick">Nick123</div>
         </div>
         <div id="drawn-header">
-            <p id="drawn-text"><?= $project->getName() ?></p>
+            <p id="drawn-text"><?= $lockeve->getName() ?></p>
         </div>
         <div id="container-bot">
             <div id="left">
                 <div id="photo-div">
-                    <img src="public/uploads/<?= $project->getImage() ?>" id="photo">
+                    <img src="public/uploads/<?= $lockeve->getImage() ?>" id="photo">
                 </div>
             </div>
             <div id="right">
                 <div id="description">
                     <p id="description-text">Opis:</p>
-                    <p id="description-content"><?= $project->getDescription() ?></p>
+                    <p id="description-content"><?= $lockeve->getDescription() ?></p>
                 </div>
 
                 <div id="price">
                     <p id="price-text">Ceny:</p>
                     <div id="price-div">
                         <?php
-                        for($i=0; $i<$project->getPrice(); $i++){
+                        for($i=0; $i<$lockeve->getPrice(); $i++){
                             echo '<img src="public/img/coin.svg" id="price-img">';
                         }
 
@@ -39,7 +49,7 @@
                 <div id="webpage">
                     <p id="webpage-text">Strona internetowa:</p>
                     <div id="webpage-div">
-                        <a href="<?= $project->getWebsite() ?>" id="website">Link do strony atrakcji</a>
+                        <a href="<?= $lockeve->getWebsite() ?>" id="website">Link do strony atrakcji</a>
                     </div>
                 </div>
 

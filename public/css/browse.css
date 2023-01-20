@@ -1,7 +1,6 @@
 .container {
     width: 100vw;
-    height: 100vh;
-    background: #DAC827;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
@@ -11,6 +10,7 @@
 
 body {
     margin: 0;
+    background-color: #DAC827;
 }
 
 #container-top {
@@ -138,6 +138,7 @@ body {
     color: #FFFFFF;
     width: 22vw;
     line-height: 2vh;
+    text-align: center;
 }
 
 #price-img {
@@ -168,7 +169,7 @@ body {
     font-size: 1.8vmin;
 }
 
-@media only screen and (max-device-width: 940px) {
+@media only screen and (max-device-width: 800px) {
 
     #back{
         height: 5vh;
@@ -208,7 +209,7 @@ body {
     }
 
     #price-img {
-        width: 7vmin;
+        width: 4.5vh;
     }
 
     #community-rating {

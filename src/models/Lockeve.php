@@ -10,8 +10,9 @@ class Lockeve
     private $website;
     private $price;
     private $rating;
+    private $event;
 
-    public function __construct($name, $description, $image, $website, $price, $rating)
+    public function __construct($name, $description, $image, $website, $price, $rating, $event)
     {
         $this->name = $name;
         $this->description = $description;
@@ -19,6 +20,7 @@ class Lockeve
         $this->website = $website;
         $this->price = $price;
         $this->rating = $rating;
+        $this->event = $event;
     }
 
 
@@ -91,6 +93,16 @@ class Lockeve
     public function setRating(float $rating): void
     {
         $this->rating = $rating;
+    }
+
+    public function getEvent(): bool
+    {
+        return $this->event;
+    }
+
+    public function setEvent(bool $event): void
+    {
+        $this->event = $event;
     }
 
 

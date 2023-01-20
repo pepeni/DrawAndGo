@@ -2,6 +2,7 @@
 
 use models\Lockeve;
 require_once __DIR__.'/../models/Lockeve.php';
+require_once __DIR__.'/../repository/LockeveRepository.php';
 
 class UploadController extends AppController
 {
@@ -9,6 +10,14 @@ class UploadController extends AppController
     const SUPPORTED_TYPES = ['image/png', 'image/jpg'];
     const UPLOAD_DIRECTORY = "/../public/uploads/";
     private $messages = [];
+    private $lockeveRepository;
+
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->lockeveRepository = new LockeveRepository();
+    }
 
     public function upload(){
 
@@ -20,10 +29,10 @@ class UploadController extends AppController
             );
             $this->messages[] = 'Loceve added successfully';
 
-            $project = new Lockeve($_POST['name'], $_POST['description'], $_FILES['file']['name'], $_POST['website'], 3, 3.5);
-
-            // $this->render('upload', ["messages" => $this->messages, 'project' => $project]);
-            return $this->render('drawn', ['project' => $project]);
+            $lockeve = new Lockeve($_POST['name'], $_POST['description'], $_FILES['file']['name'], $_POST['website'], $_POST['price'], 0, $_POST['choice']==="event");
+            $this->lockeveRepository->addLockeve($lockeve);
+            return $this->render('upload', ["messages" => $this->messages, 'loceve' => $lockeve]);
+            //return $this->render('drawn', ['lockeve' => $lockeve]);
         }
         $this->render('upload', ["messages" => $this->messages]);
     }
@@ -41,6 +50,11 @@ class UploadController extends AppController
         }
 
         return true;
+    }
+
+    public function browse() {
+        $loceves = $this->lockeveRepository->getLockeves();
+        $this->render('browse', ['loceves' => $loceves]);
     }
 
 }

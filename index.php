@@ -9,7 +9,7 @@ Routing::get('', 'DefaultController');
 Routing::get('settings', 'DefaultController');
 Routing::get('main_menu', 'DefaultController');
 Routing::get('register', 'DefaultController');
-Routing::get('browse', 'DefaultController');
+Routing::get('browse', 'UploadController');
 Routing::get('drawn', 'DefaultController');
 Routing::post('login', 'SecurityController');
 Routing::post('upload', 'UploadController');

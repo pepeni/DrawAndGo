@@ -6,7 +6,16 @@
 <body>
     <div class="container">
         <div id="container-top">
-            <div id="back"><a href="" id="back-link"><img src="public/img/arrow_back.svg" id="arrow-back-img">Wróć</a></div>
+            <div id="back">
+                <a href="
+                <?php
+                    $address = trim($_SERVER['SERVER_NAME'], '_')."main_menu";
+                    echo $address;
+
+                ?>
+                " id="back-link">
+                    <img src="public/img/arrow_back.svg" id="arrow-back-img">Wróć</a>
+            </div>
             <div id="nick">Nick123</div>
         </div>
         <div id="settings-header">
