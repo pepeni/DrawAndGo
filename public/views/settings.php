@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/settings.css">
@@ -16,7 +18,9 @@
                 " id="back-link">
                     <img src="public/img/arrow_back.svg" id="arrow-back-img">Wróć</a>
             </div>
-            <div id="nick">Nick123</div>
+            <div id="nick"><?php
+                echo $_SESSION['nick'];
+                ?></div>
         </div>
         <div id="settings-header">
             <p id="setting-text">Ustawienia</p>

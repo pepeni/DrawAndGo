@@ -1,8 +1,9 @@
 <?php
-
+session_start();
 use models\Lockeve;
 
 require_once 'Repository.php';
+require_once 'UserRepository.php';
 require_once __DIR__.'/../models/Lockeve.php';
 class LockeveRepository extends Repository
 {
@@ -40,7 +41,8 @@ class LockeveRepository extends Repository
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?,  ?, ?)
         ');
 
-        $assignedByID = 1;
+        $userRepository = new UserRepository();
+        $assignedByID = $userRepository->getUserId($_SESSION['nick']);
         $numberOfVotes = 0;
 
         $stmt->execute(

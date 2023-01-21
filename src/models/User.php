@@ -6,15 +6,19 @@ class User
 {
     private $email;
     private $password;
-    private $name;
-    private $surname;
+    private $nick;
+    private $salt;
+    private $admin;
 
-    public function __construct(string $email, string $password, string $name, string $surname)
+    private $dateTime;
+
+    public function __construct(string $email, string $password, string $nick, string $salt, bool $admin)
     {
         $this->email = $email;
         $this->password = $password;
-        $this->name = $name;
-        $this->surname = $surname;
+        $this->nick = $nick;
+        $this->salt = $salt;
+        $this->admin = $admin;
     }
 
 
@@ -29,14 +33,14 @@ class User
         return $this->password;
     }
 
-    public function getName(): string
+    public function getNick(): string
     {
-        return $this->name;
+        return $this->nick;
     }
 
-    public function getSurname(): string
+    public function getSalt(): string
     {
-        return $this->surname;
+        return $this->salt;
     }
 
     public function setEmail(string $email)
@@ -49,15 +53,36 @@ class User
         $this->password = $password;
     }
 
-    public function setName(string $name)
+    public function setNick(string $nick)
     {
-        $this->name = $name;
+        $this->nick = $nick;
     }
 
-    public function setSurname(string $surname)
+    public function setSalt(string $salt)
     {
-        $this->surname = $surname;
+        $this->salt = $salt;
     }
+
+    public function getAdmin(): bool
+    {
+        return $this->admin;
+    }
+
+    public function setAdmin(bool $admin)
+    {
+        $this->admin = $admin;
+    }
+
+    public function getDateTime():string
+    {
+        return $this->dateTime;
+    }
+
+    public function setDateTime(string $dateTime): void
+    {
+        $this->dateTime = $dateTime;
+    }
+
 
 
 }

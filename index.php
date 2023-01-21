@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require 'Routing.php';
  
 $path = trim($_SERVER['REQUEST_URI'], '/');
@@ -12,8 +14,23 @@ Routing::get('register', 'DefaultController');
 Routing::get('browse', 'UploadController');
 Routing::get('drawn', 'DefaultController');
 Routing::post('login', 'SecurityController');
+Routing::post('register', 'SecurityController');
 Routing::post('upload', 'UploadController');
 
+if( $path == 'upload'){
+    if(!isset($_SESSION['admin'])) {
+        $path = 'main_menu';
+    }
+    elseif (!$_SESSION['admin']){
+        $path = 'main_menu';
+    }
+}
+
+if(!isset($_SESSION['nick'])){
+    if($path != 'login' && $path != 'register' ){
+        $path = '';
+    }
+}
 Routing::run($path);
 
 ?>

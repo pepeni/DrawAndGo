@@ -30,7 +30,11 @@
                 <input name="password" type="password" placeholder="**********" required>
                 
                 <button type="submit">Zaloguj</button>
-                <a href="" id="register-link"><label id="click-register-1">Nie masz konta? </label><label id="click-register-2">Zarejestruj się!</label></a>
+                <a href="<?php
+                $address = trim($_SERVER['SERVER_NAME'], '_')."register";
+                echo $address;
+
+                ?>" id="register-link"><label id="click-register-1">Nie masz konta? </label><label id="click-register-2">Zarejestruj się!</label></a>
 
             </form>
         </div>

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/upload.css">
@@ -17,7 +19,9 @@
                 <img src="public/img/arrow_back.svg" id="arrow-back-img">Wróć
             </a>
         </div>
-        <div id="nick">Nick123</div>
+        <div id="nick"><?php
+            echo $_SESSION['nick'];
+            ?></div>
     </div>
     <div id="upload-header">
         <p id="upload-text">Dodaj atrakcję, lub event:</p>
