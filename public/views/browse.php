@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/browse.css">
+    <script type="text/javascript" src="public/js/search.js" defer></script>
     <title>BROWSE</title>
 </head>
 <body>
@@ -27,7 +28,7 @@
         <div id="searchadd">
 
             <input class="<?php
-            if( $_SESSION['nick']){
+            if( !$_SESSION['admin']){
                 echo 'search-bar-center';
             }
             else{
@@ -55,7 +56,9 @@
         <div id="container-bot">
 
             <div id="records">
+
                 <?php foreach ($loceves as $loceve): ?>
+
                 <a id="link" href="<?=
                 $address = trim($_SERVER['SERVER_NAME'], '_')."drawn?lockeve=".$loceve->getName();
 
@@ -99,3 +102,33 @@
         
     </div>
 </body>
+
+<template id="lockeve-template">
+    <a id="link" href="" >
+        <div class="record">
+            <div id="left">
+                <div id="photo-div">
+                    <img src="" id="photo">
+                </div>
+            </div>
+            <div id="right">
+                <div id="record-name">
+                    record name
+                </div>
+                <div id="price-div">
+
+                    coins
+
+                </div>
+                <div id="community-rating">
+                    <div class="star" data-value="1"><img src="public/img/star.svg"></div>
+                    <div class="star" data-value="2"><img src="public/img/star.svg"></div>
+                    <div class="star" data-value="3"><img src="public/img/star.svg"></div>
+                    <div class="star" data-value="4"><img src="public/img/star.svg"></div>
+                    <div class="star" data-value="5"><img src="public/img/star.svg"></div>
+                </div>
+                <button id="i-was-there">Byłem tam</button>
+            </div>
+        </div>
+    </a>
+</template>

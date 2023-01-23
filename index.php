@@ -17,6 +17,7 @@ Routing::get('randomDrawn', 'DrawnController');
 Routing::post('login', 'SecurityController');
 Routing::post('register', 'SecurityController');
 Routing::post('upload', 'UploadController');
+Routing::post('search', 'UploadController');
 
 if( $path == 'upload'){
     if(!isset($_SESSION['admin'])) {

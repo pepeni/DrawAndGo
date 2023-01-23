@@ -57,6 +57,18 @@ class LockeveRepository extends Repository
         );
     }
 
+    public function getLockevesByName(string $searchString)
+    {
+        $searchString = '%'.strtolower($searchString).'%';
+        $stmt = $this->database->connect()->prepare('
+                SELECT * FROM schema.lockeves WHERE LOWER(name) LIKE :search
+        ');
+        $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function addLockeve(Lockeve $lockeve) :void
     {
         $date = new DateTime();
