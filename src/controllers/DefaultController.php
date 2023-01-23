@@ -16,11 +16,6 @@ class DefaultController extends AppController{
         $this->render('main_menu');
     }
 
-
-    public function drawn() {
-        $this->render('drawn');
-    }
-
     public function register() {
         $this->render('register');
     }

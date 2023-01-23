@@ -23,6 +23,12 @@ class UploadController extends AppController
 
         if($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])){
 
+            $lockeve = $this->lockeveRepository->getLockeveByName($_POST['name']);
+            if($lockeve){
+                $this->messages[] = 'Loceve with this name already exist!';
+                return $this->render('upload', ["messages" => $this->messages]);
+            }
+
             move_uploaded_file(
                 $_FILES['file']['tmp_name'],
                 dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']['name']

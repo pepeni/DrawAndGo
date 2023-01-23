@@ -28,7 +28,7 @@ class SecurityController extends AppController
         $email = $_POST["email"];
         $password = $_POST["password"];
 
-        $user = $this->userRepository->getUser($email);
+        $user = $this->userRepository->getUserByEmail($email);
 
         if (!$user) {
             return $this->render('login', ['messages' => ['User not found!']]);
@@ -38,7 +38,7 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['User with this email not exist!']]);
         }
 
-        if ($user->getPassword() !== $password){
+        if (!password_verify($password, $user->getPassword())){
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
 
@@ -56,14 +56,48 @@ class SecurityController extends AppController
         }
 
         $email = $_POST['email'];
-        $password = $_POST['password'];
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $nick = $_POST['nick'];
-        $salt = "aaa";
         $admin = false;
         $date = new DateTime();
 
-        //TODO try to use better hash function
-        $user = new User($email, $password, $nick, $salt, $admin);
+        $nickPattern = '/[A-Za-z\d]{5,64}$/i';
+        $passwordPattern = '/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/i';
+        $emailPattern = '/^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$/i';
+
+
+        if (strlen($_POST['password']) < 8) {
+            return $this->render('register', ['messages' => ['password should contain at least 8 characters']]);
+        }
+
+        if (strlen($nick) < 5 || strlen($nick) > 64) {
+            return $this->render('register', ['messages' => ['nick should contain between 5-64 characters']]);
+        }
+
+        if (!preg_match($passwordPattern ,$_POST['password'])) {
+            return $this->render('register', ['messages' => ['password should contain at least 1 number and 1 letter']]);
+        }
+
+        if (!preg_match($nickPattern ,$nick)) {
+            return $this->render('register', ['messages' => ['nick should contain only letters and numbers']]);
+        }
+
+        if (!preg_match($emailPattern ,$email)) {
+            return $this->render('register', ['messages' => ['email is not proper']]);
+        }
+
+
+        $user = $this->userRepository->getUserByEmail($email);
+        if ($user) {
+            return $this->render('register', ['messages' => ['User with this email already exist!']]);
+        }
+
+        $user = $this->userRepository->getUserByNIck($nick);
+        if ($user) {
+            return $this->render('register', ['messages' => ['User with this nick already exist!']]);
+        }
+
+        $user = new User($email, $password, $nick, $admin);
         $user->setDateTime($date->format("Y-m-d-G-i-s"));
 
         $this->userRepository->addUser($user);

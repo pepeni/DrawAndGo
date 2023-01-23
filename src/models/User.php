@@ -7,17 +7,15 @@ class User
     private $email;
     private $password;
     private $nick;
-    private $salt;
     private $admin;
 
     private $dateTime;
 
-    public function __construct(string $email, string $password, string $nick, string $salt, bool $admin)
+    public function __construct(string $email, string $password, string $nick,  bool $admin)
     {
         $this->email = $email;
         $this->password = $password;
         $this->nick = $nick;
-        $this->salt = $salt;
         $this->admin = $admin;
     }
 
@@ -38,10 +36,6 @@ class User
         return $this->nick;
     }
 
-    public function getSalt(): string
-    {
-        return $this->salt;
-    }
 
     public function setEmail(string $email)
     {
@@ -58,10 +52,6 @@ class User
         $this->nick = $nick;
     }
 
-    public function setSalt(string $salt)
-    {
-        $this->salt = $salt;
-    }
 
     public function getAdmin(): bool
     {

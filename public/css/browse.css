@@ -169,6 +169,64 @@ body {
     font-size: 1.8vmin;
 }
 
+#searchadd{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+}
+
+.search-bar{
+    height: 4vh;
+    width: 40vw;
+    margin-left: 10vw;
+    font-size: 3vmin;
+    line-height: 4vh;
+    border-radius: 25px;
+}
+
+.search-bar-center{
+    height: 4vh;
+    width: 40vw;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    font-size: 3vmin;
+    line-height: 4vh;
+    border-radius: 25px;
+}
+
+.add-lockeve{
+    height: 4vh;
+    width: 20vw;
+    margin-left: 10vw;
+    margin-right: 20vw;
+    font-size: 3vmin;
+    line-height: 4vh;
+    background-color: #2F4858;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.add-link:hover {
+    text-decoration: underline;
+}
+
+.add-link:visited {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.add-link:active {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.add-link:link {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
 @media only screen and (max-device-width: 800px) {
 
     #back{

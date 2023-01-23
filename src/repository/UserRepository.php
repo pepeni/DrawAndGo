@@ -8,7 +8,7 @@ require_once __DIR__.'/../models/User.php';
 class UserRepository extends Repository
 {
 
-    public function getUser(string $email): ?User
+    public function getUserByEmail(string $email): ?User
     {
         $stmt = $this->database->connect()->prepare('
                 SELECT * FROM schema.users WHERE email = :email
@@ -26,7 +26,28 @@ class UserRepository extends Repository
             $user['email'],
             $user['password'],
             $user['nick'],
-            $user['salt'],
+            $user['admin']
+        );
+    }
+
+    public function getUserByNick(string $nick): ?User
+    {
+        $stmt = $this->database->connect()->prepare('
+                SELECT * FROM schema.users WHERE nick = :nick
+        ');
+        $stmt->bindParam(':nick', $nick, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user == false) {
+            return null;
+        }
+
+        return new User(
+            $user['email'],
+            $user['password'],
+            $user['nick'],
             $user['admin']
         );
     }
@@ -34,7 +55,7 @@ class UserRepository extends Repository
     public function getUserId(string $nick): ?int
     {
         $stmt = $this->database->connect()->prepare('
-                SELECT * FROM schema.users WHERE nick = :nick
+                SELECT id FROM schema.users WHERE nick = :nick
         ');
         $stmt->bindParam(':nick', $nick, PDO::PARAM_STR);
         $stmt->execute();
@@ -61,12 +82,11 @@ class UserRepository extends Repository
         ]);
 
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO schema.users (salt, nick, email, password, id_users_details)
-            VALUES (?, ?, ?, ?, ?)
+            INSERT INTO schema.users ( nick, email, password, id_users_details)
+            VALUES (?, ?, ?, ?)
         ');
 
         $stmt->execute([
-            $user->getSalt(),
             $user->getNick(),
             $user->getEmail(),
             $user->getPassword(),

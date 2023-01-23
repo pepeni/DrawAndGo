@@ -7,12 +7,37 @@ require_once 'UserRepository.php';
 require_once __DIR__.'/../models/Lockeve.php';
 class LockeveRepository extends Repository
 {
-    public function getLockeve(int $id): ?Lockeve
+    public function getLockeveById(int $id): ?Lockeve
     {
         $stmt = $this->database->connect()->prepare('
                 SELECT * FROM schema.lockeves WHERE id = :id
         ');
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $lockeve = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($lockeve == false) {
+            return null;
+        }
+
+        return new Lockeve(
+            $lockeve['name'],
+            $lockeve['description'],
+            $lockeve['image'],
+            $lockeve['website'],
+            $lockeve['price'],
+            $lockeve['rating'],
+            $lockeve['event']
+        );
+    }
+
+    public function getLockeveByName(string $name): ?Lockeve
+    {
+        $stmt = $this->database->connect()->prepare('
+                SELECT * FROM schema.lockeves WHERE name = :name
+        ');
+        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
         $stmt->execute();
 
         $lockeve = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -45,6 +70,7 @@ class LockeveRepository extends Repository
         $assignedByID = $userRepository->getUserId($_SESSION['nick']);
         $numberOfVotes = 0;
 
+
         $stmt->execute(
             [
                 $lockeve->getName(),
@@ -55,7 +81,7 @@ class LockeveRepository extends Repository
                 $lockeve->getImage(),
                 $numberOfVotes,
                 $date->format('Y-m-d'),
-                $lockeve->getEvent(),
+                $lockeve->getEvent()? 't':'f',
                 $assignedByID
             ]
         );

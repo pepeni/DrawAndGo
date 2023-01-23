@@ -45,7 +45,7 @@
             <div class="option">
                 <p class="bot-title">Losuj</p>
                 <a id="link" href="<?php
-                $address = trim($_SERVER['SERVER_NAME'], '_')."drawn";
+                $address = trim($_SERVER['SERVER_NAME'], '_')."randomDrawn";
                 echo $address;
 
                 ?>">
