@@ -14,10 +14,14 @@ Routing::get('register', 'DefaultController');
 Routing::get('browse', 'UploadController');
 Routing::get('drawn', 'DrawnController');
 Routing::get('randomDrawn', 'DrawnController');
+Routing::get('logout', 'SecurityController');
 Routing::post('login', 'SecurityController');
 Routing::post('register', 'SecurityController');
 Routing::post('upload', 'UploadController');
 Routing::post('search', 'UploadController');
+Routing::post('iWasThere', 'UploadController');
+
+
 
 if( $path == 'upload'){
     if(!isset($_SESSION['admin'])) {

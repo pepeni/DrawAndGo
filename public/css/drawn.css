@@ -269,6 +269,15 @@ body {
     font-size: 1.8vmin;
 }
 
+#i-was-not-there{
+    background: #DAC827;
+    border-radius: 25px;
+    height: 4vh;
+    width: 10vw;
+    margin-right: 10vw;
+    font-size: 1.8vmin;
+}
+
 @media only screen and (max-device-width: 940px) {
 
     .container {
@@ -538,6 +547,15 @@ body {
     
     #i-was-there{
         background: #7EBB4A;
+        border-radius: 25px;
+        height: 4vh;
+        width: 40vw;
+        margin-right: 5vw;
+        font-size: 4vmin;
+    }
+
+    #i-was-not-there{
+        background: #DAC827;
         border-radius: 25px;
         height: 4vh;
         width: 40vw;

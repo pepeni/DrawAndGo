@@ -169,6 +169,14 @@ body {
     font-size: 1.8vmin;
 }
 
+#i-was-not-there{
+    background: #DAC827;
+    border-radius: 25px;
+    height: 4vh;
+    width: 12vw;
+    font-size: 1.8vmin;
+}
+
 #searchadd{
     display: flex;
     flex-direction: row;
@@ -196,7 +204,7 @@ body {
     border-radius: 25px;
 }
 
-.add-lockeve{
+.add-loceve{
     height: 4vh;
     width: 20vw;
     margin-left: 20vw;
@@ -308,6 +316,14 @@ body {
     
     #i-was-there{
         background: #7EBB4A;
+        border-radius: 25px;
+        height: 4vh;
+        width: 70%;
+        font-size: 1.8vmin;
+    }
+
+    #i-was-not-there{
+        background: #DAC827;
         border-radius: 25px;
         height: 4vh;
         width: 70%;

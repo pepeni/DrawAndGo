@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/browse.css">
     <script type="text/javascript" src="public/js/search.js" defer></script>
+    <script type="text/javascript" src="public/js/iWasThere.js" defer></script>
     <title>BROWSE</title>
 </head>
 <body>
@@ -34,7 +35,7 @@
             else{
                 echo 'search-bar';
             }
-            ?>" placeholder="search lockeve">
+            ?>" placeholder="search loceve">
 
             <?php
             if($_SESSION['admin']) {
@@ -43,7 +44,7 @@
                 echo $address;
 
                 echo '" class="add-link">';
-                echo '<div class="add-lockeve">add locekve</div></a>';
+                echo '<div class="add-loceve">add locekve</div></a>';
             }
             ?>
 
@@ -60,7 +61,7 @@
                 <?php foreach ($loceves as $loceve): ?>
 
                 <a id="link" href="<?=
-                $address = trim($_SERVER['SERVER_NAME'], '_')."drawn?lockeve=".$loceve->getName();
+                $address = trim($_SERVER['SERVER_NAME'], '_')."drawn?loceve=".$loceve->getName();
 
                 ?>" >
                     <div class="record">
@@ -88,7 +89,12 @@
                                 <div class="star" data-value="4"><img src="public/img/star.svg"></div>
                                 <div class="star" data-value="5"><img src="public/img/star.svg"></div>
                             </div>
-                            <button id="i-was-there">Byłem tam</button>
+                            <button id="<?php if($loceve->getIWasThere()){
+                                echo 'i-was-there';
+                            } else {
+                                echo 'i-was-not-there';
+                            }
+                            ?>" onclick="iWasThere(event, '<?= $loceve->getName(); ?>')">Byłem tam</button>
                         </div>
                     </div>
                 </a>
@@ -103,7 +109,7 @@
     </div>
 </body>
 
-<template id="lockeve-template">
+<template id="loceve-template">
     <a id="link" href="" >
         <div class="record">
             <div id="left">

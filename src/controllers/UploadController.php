@@ -1,8 +1,8 @@
 <?php
 
-use models\Lockeve;
-require_once __DIR__.'/../models/Lockeve.php';
-require_once __DIR__.'/../repository/LockeveRepository.php';
+use models\Loceve;
+require_once __DIR__ . '/../models/Loceve.php';
+require_once __DIR__ . '/../repository/LoceveRepository.php';
 
 class UploadController extends AppController
 {
@@ -10,21 +10,21 @@ class UploadController extends AppController
     const SUPPORTED_TYPES = ['image/png', 'image/jpg'];
     const UPLOAD_DIRECTORY = "/../public/uploads/";
     private $messages = [];
-    private $lockeveRepository;
+    private $loceveRepository;
 
 
     public function __construct()
     {
         parent::__construct();
-        $this->lockeveRepository = new LockeveRepository();
+        $this->loceveRepository = new LoceveRepository();
     }
 
     public function upload(){
 
         if($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])){
 
-            $lockeve = $this->lockeveRepository->getLockeveByName($_POST['name']);
-            if($lockeve){
+            $loceve = $this->loceveRepository->getLoceveByName($_POST['name']);
+            if($loceve){
                 $this->messages[] = 'Loceve with this name already exist!';
                 return $this->render('upload', ["messages" => $this->messages]);
             }
@@ -35,10 +35,10 @@ class UploadController extends AppController
             );
             $this->messages[] = 'Loceve added successfully';
 
-            $lockeve = new Lockeve($_POST['name'], $_POST['description'], $_FILES['file']['name'], $_POST['website'], $_POST['price'], 0, $_POST['choice']==="event");
-            $this->lockeveRepository->addLockeve($lockeve);
-            return $this->render('upload', ["messages" => $this->messages, 'loceve' => $lockeve]);
-            //return $this->render('drawn', ['lockeve' => $lockeve]);
+            $loceve = new Loceve($_POST['name'], $_POST['description'], $_FILES['file']['name'], $_POST['website'], $_POST['price'], 0, $_POST['choice']==="event");
+            $this->loceveRepository->addLoceve($loceve);
+            return $this->render('upload', ["messages" => $this->messages, 'loceve' => $loceve]);
+            //return $this->render('drawn', ['loceve' => $loceve]);
         }
         $this->render('upload', ["messages" => $this->messages]);
     }
@@ -59,7 +59,7 @@ class UploadController extends AppController
     }
 
     public function browse() {
-        $loceves = $this->lockeveRepository->getLockeves();
+        $loceves = $this->loceveRepository->getLoceves();
         $this->render('browse', ['loceves' => $loceves]);
     }
 
@@ -73,8 +73,30 @@ class UploadController extends AppController
             header('Content-type: application/json');
             http_response_code(200);
 
-            echo json_encode($this->lockeveRepository->getLockevesByName($decoded['search']));
+            echo json_encode($this->loceveRepository->getLocevesByName($decoded['search']));
         }
     }
+
+    public function iWasThere(){
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]): '';
+
+        if($contentType === "application/json"){
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            if($this->loceveRepository->checkIfIWasThere($decoded['loceve'])){
+                $this->loceveRepository->deleteIWasThere($decoded['loceve']);
+            } else{
+                $this->loceveRepository->addIWasThere($decoded['loceve']);
+            }
+
+
+            header('Content-type: application/json');
+            http_response_code(200);
+
+            echo json_encode('Changed');
+        }
+    }
+
 
 }

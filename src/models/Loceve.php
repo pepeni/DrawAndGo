@@ -2,7 +2,7 @@
 
 namespace models;
 
-class Lockeve
+class Loceve
 {
     private $name;
     private $description;
@@ -11,8 +11,9 @@ class Lockeve
     private $price;
     private $rating;
     private $event;
+    private $iWasThere = false;
 
-    public function __construct($name, $description, $image, $website, $price, $rating, $event)
+    public function __construct($name, $description, $image, $website, $price, $rating, $event, $iWasThere = false)
     {
         $this->name = $name;
         $this->description = $description;
@@ -21,6 +22,7 @@ class Lockeve
         $this->price = $price;
         $this->rating = $rating;
         $this->event = $event;
+        $this->iWasThere = $iWasThere;
     }
 
 
@@ -104,6 +106,19 @@ class Lockeve
     {
         $this->event = $event;
     }
+
+
+    public function getIWasThere(): bool
+    {
+        return $this->iWasThere;
+    }
+
+
+    public function setIWasThere(bool $iWasThere): void
+    {
+        $this->iWasThere = $iWasThere;
+    }
+
 
 
 

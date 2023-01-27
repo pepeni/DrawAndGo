@@ -3,26 +3,26 @@ session_start();
 
 class DrawnController extends AppController
 {
-    private $lockeveRepository;
+    private $loceveRepository;
     public function __construct()
     {
         parent::__construct();
-        $this->lockeveRepository = new LockeveRepository();
+        $this->loceveRepository = new LoceveRepository();
     }
     public function randomDrawn() {
-        $loceves = $this->lockeveRepository->getLockeves();
+        $loceves = $this->loceveRepository->getLoceves();
         if($loceves == null){
             return $this->render('main_menu');
         }
 
         $number = array_rand($loceves,1);
-        $lockeve = $loceves[$number];
+        $loceve = $loceves[$number];
 
-        $this->render('drawn', ['lockeve' => $lockeve]);
+        $this->render('drawn', ['loceve' => $loceve]);
     }
 
     public function drawn() {
-        $lockeve = $this->lockeveRepository->getLockeveByName( $_GET['lockeve'] );
-        $this->render('drawn', ['lockeve' => $lockeve]);
+        $loceve = $this->loceveRepository->getLoceveByName( $_GET['loceve'] );
+        $this->render('drawn', ['loceve' => $loceve]);
     }
 }

@@ -1,5 +1,5 @@
-const search = document.querySelector('input[placeholder="search lockeve"]');
-const lockeveContainer = document.querySelector("#records");
+const search = document.querySelector('input[placeholder="search loceve"]');
+const loceveContainer = document.querySelector("#records");
 
 search.addEventListener("keyup", function (event) {
     if(event.key === "Enter"){
@@ -15,42 +15,50 @@ search.addEventListener("keyup", function (event) {
             body: JSON.stringify(data)
         }).then(function (response){
             return response.json();
-        }).then(function (lockeves) {
-            lockeveContainer.innerHTML = "";
-            loadLockeves(lockeves);
+        }).then(function (loceves) {
+            loceveContainer.innerHTML = "";
+            loadLoceves(loceves);
         })
     }
 });
 
-function loadLockeves(lockeves) {
-    lockeves.forEach(lockeve => {
-        console.log(lockeve);
-        createLockeve(lockeve);
+function loadLoceves(loceves) {
+    loceves.forEach(loceve => {
+        console.log(loceve);
+        createLoceve(loceve);
     })
 }
 
-function createLockeve(lockeve) {
-    const template = document.querySelector("#lockeve-template");
+function createLoceve(loceve) {
+    const template = document.querySelector("#loceve-template");
 
     const clone = template.content.cloneNode(true);
 
     const image = clone.querySelector("img");
-    image.src = 'public/uploads/' + lockeve.image;
+    image.src = 'public/uploads/' + loceve.image;
 
     const name = clone.querySelector("#record-name");
-    name.innerHTML = lockeve.name;
+    name.innerHTML = loceve.name;
 
     const price = clone.querySelector("#price-div");
     priceHtml = '';
-    for (let i = 0; i < lockeve.price; i++){
+    for (let i = 0; i < loceve.price; i++){
         priceHtml = priceHtml + '<img src="public/img/coin.svg" id="price-img">';
     }
     price.innerHTML = priceHtml;
 
     const link = clone.querySelector("a");
-    link.href = "/drawn?lockeve=" + lockeve.name;
+    link.href = "/drawn?loceve=" + loceve.name;
+
+    const iWasThere = clone.querySelector("#i-was-there");
+    if (loceve.id_user !== null){
+        iWasThere.id = 'i-was-there'
+    }
+    else{
+        iWasThere.id = 'i-was-not-there'
+    }
 
 
-    lockeveContainer.appendChild(clone);
+    loceveContainer.appendChild(clone);
 
 }

@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/drawn.css">
+    <script type="text/javascript" src="public/js/iWasThere.js" defer></script>
     <title>DRAWN</title>
 </head>
 <body>
@@ -24,25 +25,25 @@
                 ?></div>
         </div>
         <div id="drawn-header">
-            <p id="drawn-text"><?= $lockeve->getName() ?></p>
+            <p id="drawn-text"><?= $loceve->getName() ?></p>
         </div>
         <div id="container-bot">
             <div id="left">
                 <div id="photo-div">
-                    <img src="public/uploads/<?= $lockeve->getImage() ?>" id="photo">
+                    <img src="public/uploads/<?= $loceve->getImage() ?>" id="photo">
                 </div>
             </div>
             <div id="right">
                 <div id="description">
                     <p id="description-text">Opis:</p>
-                    <p id="description-content"><?= $lockeve->getDescription() ?></p>
+                    <p id="description-content"><?= $loceve->getDescription() ?></p>
                 </div>
 
                 <div id="price">
                     <p id="price-text">Ceny:</p>
                     <div id="price-div">
                         <?php
-                        for($i=0; $i<$lockeve->getPrice(); $i++){
+                        for($i=0; $i<$loceve->getPrice(); $i++){
                             echo '<img src="public/img/coin.svg" id="price-img">';
                         }
 
@@ -53,7 +54,7 @@
                 <div id="webpage">
                     <p id="webpage-text">Strona internetowa:</p>
                     <div id="webpage-div">
-                        <a href="<?= $lockeve->getWebsite() ?>" id="website">Link do strony atrakcji</a>
+                        <a href="<?= $loceve->getWebsite() ?>" id="website">Link do strony atrakcji</a>
                     </div>
                 </div>
 
@@ -69,7 +70,12 @@
                 </div>
 
                 <div id="user-options">
-                    <button id="i-was-there">Byłem tam</button>
+                    <button id="<?php if($loceve->getIWasThere()){
+                        echo 'i-was-there';
+                    } else {
+                        echo 'i-was-not-there';
+                    }
+                    ?>" onclick="iWasThere(event, '<?= $loceve->getName(); ?>')">Byłem tam</button>
                     <div id="rating-div">
                         <p id="user-rating">Twoja ocena:</p>
                         <div class="rating">

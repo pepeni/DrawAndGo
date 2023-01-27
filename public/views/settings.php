@@ -48,13 +48,6 @@
                 <img src="public/img/coin.svg" class="price-img">
             </button>
         </div>
-        <div id="city">
-            <p id="city-text">Miasto</p>
-            <select id="city-select">
-                <option value="option1">Krakow</option>
-                <option value="option2">Kielce</option>
-            </select>
-        </div>
         <div id="draw-new">
             <p id="draw-new-text">Losuj tylko nowe</p>
             <button class="draw-new-button" id="draw-new-yes">tak</button>
@@ -62,7 +55,7 @@
         </div>
         <div id="buttons">
             <button class="end-button" id="reset-account">Resetuj konto</button>
-            <button class="end-button" id="logout">Wyloguj</button>
+            <a id="a-logout" href="/logout"><button class="end-button" id="logout" >Wyloguj</button></a>
         </div>
     </div>
 </body>
