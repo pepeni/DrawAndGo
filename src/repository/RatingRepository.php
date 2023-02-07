@@ -22,6 +22,8 @@ class RatingRepository extends Repository
             $loceveId,
             $rating
         ]);
+
+        $loceveRepository->communityRating($loceveName);
     }
 
     public function changeRating(String $loceveName, int $rating) {
@@ -33,13 +35,17 @@ class RatingRepository extends Repository
         $userRepository = new UserRepository();
         $loceveRepository = new LoceveRepository();
         $userId = $userRepository->getUserId($_SESSION['nick']);
-        $loceveId = $loceveRepository->getLoceveIdByName($loceveName);
+        $loceveId = $loceveRepository->getLoceveIDByName($loceveName);
+
 
         $stmt->bindParam(':value1', $rating, PDO::PARAM_INT);
         $stmt->bindParam(':id_user', $userId, PDO::PARAM_INT);
         $stmt->bindParam(':id_loceve', $loceveId, PDO::PARAM_INT);
 
         $stmt->execute();
+
+        $loceveRepository->communityRating($loceveName);
+
     }
 
     public function checkRating(String $loceveName) : bool {
@@ -67,6 +73,31 @@ class RatingRepository extends Repository
         }
     }
 
+    public function getRating(String $loceveName) : int {
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM schema.ratings WHERE id_user = :id_user AND id_loceve = :id_loceve
+        ');
+
+
+        $userRepository = new UserRepository();
+        $loceveRepository = new LoceveRepository();
+        $userId = $userRepository->getUserId($_SESSION['nick']);
+        $loceveId = $loceveRepository->getLoceveIdByName($loceveName);
+
+        $stmt->bindParam(':id_user', $userId, PDO::PARAM_INT);
+        $stmt->bindParam(':id_loceve', $loceveId, PDO::PARAM_INT);
+
+        $stmt->execute();
+
+        $rating = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($rating == false) {
+            return 0;
+        } else {
+            return $rating['rating'];
+        }
+    }
+
     public function deleteUserRating() {
         $stmt = $this->database->connect()->prepare('
             DELETE FROM schema.ratings WHERE id_user = :id_user
@@ -81,5 +112,27 @@ class RatingRepository extends Repository
 
         $stmt->execute();
 
+    }
+
+    public function getAllRatings(String $loceveName): array {
+        $loceveRepository = new LoceveRepository();
+        $loceveId = $loceveRepository->getLoceveIDByName($loceveName);
+        $result = [];
+
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT rating FROM schema.ratings WHERE id_loceve = :id_loceve
+        ');
+
+        $stmt->bindParam(':id_loceve', $loceveId, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $ratings = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($ratings as $rating){
+            $result[] = $rating['rating'];
+        }
+
+        return $result;
     }
 }

@@ -2,6 +2,10 @@
 
 namespace models;
 
+use RatingRepository;
+
+require_once __DIR__ . '/../repository/RatingRepository.php';
+
 class Loceve
 {
     private $name;
@@ -11,9 +15,10 @@ class Loceve
     private $price;
     private $rating;
     private $event;
+    private $number_of_votes;
     private $iWasThere = false;
 
-    public function __construct($name, $description, $image, $website, $price, $rating, $event, $iWasThere = false)
+    public function __construct($name, $description, $image, $website, $price, $rating, $event, $number_of_votes, $iWasThere = false)
     {
         $this->name = $name;
         $this->description = $description;
@@ -22,6 +27,7 @@ class Loceve
         $this->price = $price;
         $this->rating = $rating;
         $this->event = $event;
+        $this->number_of_votes = $number_of_votes;
         $this->iWasThere = $iWasThere;
     }
 
@@ -86,13 +92,13 @@ class Loceve
     }
 
 
-    public function getRating() :float
+    public function getRating() :int
     {
         return $this->rating;
     }
 
 
-    public function setRating(float $rating): void
+    public function setRating(int $rating): void
     {
         $this->rating = $rating;
     }
@@ -119,6 +125,17 @@ class Loceve
         $this->iWasThere = $iWasThere;
     }
 
+
+    public function getNumberOfVotes() :int
+    {
+        return $this->number_of_votes;
+    }
+
+
+    public function setNumberOfVotes(int $number_of_votes): void
+    {
+        $this->number_of_votes = $number_of_votes;
+    }
 
 
 

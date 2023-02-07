@@ -4,6 +4,7 @@ use models\Loceve;
 
 require_once 'Repository.php';
 require_once 'UserRepository.php';
+require_once 'RatingRepository.php';
 require_once __DIR__ . '/../models/Loceve.php';
 class LoceveRepository extends Repository
 {
@@ -29,6 +30,7 @@ class LoceveRepository extends Repository
             $loceve['price'],
             $loceve['rating'],
             $loceve['event'],
+            $loceve['number_of_votes'],
             (bool)$loceve['id_user']
         );
     }
@@ -55,6 +57,7 @@ class LoceveRepository extends Repository
             $loceve['price'],
             $loceve['rating'],
             $loceve['event'],
+            $loceve['number_of_votes'],
             (bool)$loceve['id_user']
         );
     }
@@ -68,7 +71,6 @@ class LoceveRepository extends Repository
         $stmt->execute();
 
         $loceve = $stmt->fetch(PDO::FETCH_ASSOC);
-        var_dump($loceve);
 
         if ($loceve == false) {
             return null;
@@ -80,9 +82,14 @@ class LoceveRepository extends Repository
     public function getLocevesByName(string $searchString)
     {
         $searchString = '%'.strtolower($searchString).'%';
+
+        $userRepository = new UserRepository();
+        $userId = $userRepository->getUserId($_SESSION['nick']);
+
         $stmt = $this->database->connect()->prepare('
-                SELECT * FROM schema.loceves LEFT JOIN schema.were_there ON id_loceve = loceves.id WHERE LOWER(schema.loceves.name) LIKE :search
+                SELECT * FROM schema.loceves LEFT JOIN schema.were_there ON id_loceve = loceves.id AND id_user = :id_user WHERE LOWER(schema.loceves.name) LIKE :search
         ');
+        $stmt->bindParam(':id_user', $userId, PDO::PARAM_INT);
         $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
         $stmt->execute();
 
@@ -122,10 +129,13 @@ class LoceveRepository extends Repository
     public function getLoceves(): array
     {
         $result = [];
+        $userRepository = new UserRepository();
+        $userId = $userRepository->getUserId($_SESSION['nick']);
 
         $stmt = $this->database->connect()->prepare('
-                SELECT * FROM schema.loceves LEFT JOIN schema.were_there on id_loceve = loceves.id
+                SELECT * FROM schema.loceves LEFT JOIN schema.were_there on id_loceve = loceves.id AND id_user = :id_user
         ');
+        $stmt->bindParam(':id_user', $userId, PDO::PARAM_INT);
         $stmt->execute();
 
         $loceves = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -139,6 +149,7 @@ class LoceveRepository extends Repository
                 $loceve['price'],
                 $loceve['rating'],
                 $loceve['event'],
+                $loceve['number_of_votes'],
                 (bool)$loceve['id_user']
             );
         }
@@ -203,6 +214,35 @@ class LoceveRepository extends Repository
         }
     }
 
+    public function communityRating(String $loceveName) {
 
+        $ratingRepository = new RatingRepository();
+        $ratings = $ratingRepository->getAllRatings($loceveName);
+        $loceveId = $this->getLoceveIDByName($loceveName);
+
+        $finalRating = 0;
+        $number_of_votes = 0;
+        foreach ($ratings as $rating){
+            $finalRating += $rating;
+            $number_of_votes += 1;
+        }
+        if($number_of_votes > 0) {
+            $finalRating = (int)round($finalRating / $number_of_votes);
+        }
+
+
+
+        $stmt = $this->database->connect()->prepare('
+            UPDATE schema.loceves SET rating = :value1, number_of_votes = :value2 WHERE id = :id_loceve
+        ');
+
+
+
+        $stmt->bindParam(':value1', $finalRating, PDO::PARAM_INT);
+        $stmt->bindParam(':value2', $number_of_votes, PDO::PARAM_INT);
+        $stmt->bindParam(':id_loceve', $loceveId, PDO::PARAM_INT);
+
+        $stmt->execute();
+    }
 
 }

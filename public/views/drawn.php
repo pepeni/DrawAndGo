@@ -85,11 +85,16 @@
                     <div id="rating-div">
                         <p id="user-rating-text">Twoja ocena:</p>
                         <div class="rating" id="user-rating">
-                            <div><img class="star" src="public/img/star_unselected.svg"></div>
-                            <div><img class="star" src="public/img/star_unselected.svg"></div>
-                            <div><img class="star" src="public/img/star_unselected.svg"></div>
-                            <div><img class="star" src="public/img/star_unselected.svg"></div>
-                            <div><img class="star" src="public/img/star_unselected.svg"></div>
+
+                            <?php
+                            $i = 0;
+                            for(; $i < $user_rating; $i++){
+                                echo '<div><img class="star" src="public/img/star_selected.svg"></div>';
+                            }
+                            for(;$i< 5; $i++){
+                                echo '<div><img class="star" src="public/img/star_unselected.svg"></div>';
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
