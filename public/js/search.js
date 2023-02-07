@@ -30,6 +30,7 @@ function loadLoceves(loceves) {
 }
 
 function createLoceve(loceve) {
+
     const template = document.querySelector("#loceve-template");
 
     const clone = template.content.cloneNode(true);
@@ -57,6 +58,17 @@ function createLoceve(loceve) {
     else{
         iWasThere.id = 'i-was-not-there'
     }
+
+    const communityRating = clone.querySelector("#community-rating");
+    ratingHtml = '';
+    let i = 0;
+    for (i = 0; i < +(loceve.rating); i++){
+        ratingHtml = ratingHtml + '<div><img class="star-selected" src="public/img/star_selected.svg"></div>';
+    }
+    for(;i < 5; i++){
+        ratingHtml = ratingHtml + '<div><img class="star-unselected" src="public/img/star_unselected.svg"></div>';
+    }
+    communityRating.innerHTML = ratingHtml;
 
 
     loceveContainer.appendChild(clone);

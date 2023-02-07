@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/drawn.css">
     <script type="text/javascript" src="public/js/iWasThere.js" defer></script>
+    <script type="text/javascript" src="public/js/userRating.js" defer></script>
     <title>DRAWN</title>
 </head>
 <body>
@@ -61,11 +62,16 @@
                 <div id="community-rating">
                     <p id="community-rating-text">Ocena społeczności:</p>
                     <div class="rating">
-                        <div class="star" data-value="1"><img src="public/img/star.svg"></div>
-                        <div class="star" data-value="2"><img src="public/img/star.svg"></div>
-                        <div class="star" data-value="3"><img src="public/img/star.svg"></div>
-                        <div class="star" data-value="4"><img src="public/img/star.svg"></div>
-                        <div class="star" data-value="5"><img src="public/img/star.svg"></div>
+                        <?php
+
+                        for($x=0; $x < $loceve->getRating(); $x++){
+                            echo '<div><img class="star" src="public/img/star_selected.svg"></div>';
+                        }
+                        for(; $x < 5; $x++){
+                            echo '<div><img class="star" src="public/img/star_unselected.svg"></div>';
+                        }
+
+                        ?>
                     </div>
                 </div>
 
@@ -77,13 +83,13 @@
                     }
                     ?>" onclick="iWasThere(event, '<?= $loceve->getName(); ?>')">Byłem tam</button>
                     <div id="rating-div">
-                        <p id="user-rating">Twoja ocena:</p>
-                        <div class="rating">
-                            <div class="star" data-value="1"><img src="public/img/star.svg"></div>
-                            <div class="star" data-value="2"><img src="public/img/star.svg"></div>
-                            <div class="star" data-value="3"><img src="public/img/star.svg"></div>
-                            <div class="star" data-value="4"><img src="public/img/star.svg"></div>
-                            <div class="star" data-value="5"><img src="public/img/star.svg"></div>
+                        <p id="user-rating-text">Twoja ocena:</p>
+                        <div class="rating" id="user-rating">
+                            <div><img class="star" src="public/img/star_unselected.svg"></div>
+                            <div><img class="star" src="public/img/star_unselected.svg"></div>
+                            <div><img class="star" src="public/img/star_unselected.svg"></div>
+                            <div><img class="star" src="public/img/star_unselected.svg"></div>
+                            <div><img class="star" src="public/img/star_unselected.svg"></div>
                         </div>
                     </div>
                 </div>

@@ -25,7 +25,6 @@
                 <p id="nick"><?php
                     echo $_SESSION['nick'];
                     ?></p>
-                <p id="achievements">Osiągnięcia: 5/68</p>
             </div>
         </div>
 

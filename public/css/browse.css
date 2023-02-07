@@ -161,6 +161,17 @@ body {
     width: 4vmin;
 }
 
+.star-selected{
+    width: 2vw;
+}
+
+.star-unselected{
+    width: 2vw;
+}
+
+
+
+
 #i-was-there{
     background: #7EBB4A;
     border-radius: 25px;
@@ -311,6 +322,14 @@ body {
 
     
     .star{
+        width: 5vmin;
+    }
+
+    .star-selected{
+        width: 5vmin;
+    }
+
+    .star-unselected{
         width: 5vmin;
     }
     

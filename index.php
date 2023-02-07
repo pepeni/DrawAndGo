@@ -20,6 +20,7 @@ Routing::post('register', 'SecurityController');
 Routing::post('upload', 'UploadController');
 Routing::post('search', 'UploadController');
 Routing::post('iWasThere', 'UploadController');
+Routing::post('userRating', 'UploadController');
 
 
 

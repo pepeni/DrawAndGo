@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/browse.css">
     <script type="text/javascript" src="public/js/search.js" defer></script>
     <script type="text/javascript" src="public/js/iWasThere.js" defer></script>
+    <script type="text/javascript" src="public/js/communityRating.js" defer></script>
     <title>BROWSE</title>
 </head>
 <body>
@@ -44,7 +45,7 @@
                 echo $address;
 
                 echo '" class="add-link">';
-                echo '<div class="add-loceve">add locekve</div></a>';
+                echo '<div class="add-loceve">add loceve</div></a>';
             }
             ?>
 
@@ -83,11 +84,16 @@
 
                             </div>
                             <div id="community-rating">
-                                <div class="star" data-value="1"><img src="public/img/star.svg"></div>
-                                <div class="star" data-value="2"><img src="public/img/star.svg"></div>
-                                <div class="star" data-value="3"><img src="public/img/star.svg"></div>
-                                <div class="star" data-value="4"><img src="public/img/star.svg"></div>
-                                <div class="star" data-value="5"><img src="public/img/star.svg"></div>
+                                <?php
+
+                                for($x=0; $x < $loceve->getRating(); $x++){
+                                    echo '<div><img class="star-selected" src="public/img/star_selected.svg"></div>';
+                                }
+                                for(; $x < 5; $x++){
+                                    echo '<div><img class="star-unselected" src="public/img/star_unselected.svg"></div>';
+                                }
+
+                                ?>
                             </div>
                             <button id="<?php if($loceve->getIWasThere()){
                                 echo 'i-was-there';
@@ -127,11 +133,7 @@
 
                 </div>
                 <div id="community-rating">
-                    <div class="star" data-value="1"><img src="public/img/star.svg"></div>
-                    <div class="star" data-value="2"><img src="public/img/star.svg"></div>
-                    <div class="star" data-value="3"><img src="public/img/star.svg"></div>
-                    <div class="star" data-value="4"><img src="public/img/star.svg"></div>
-                    <div class="star" data-value="5"><img src="public/img/star.svg"></div>
+                    stars
                 </div>
                 <button id="i-was-there">Byłem tam</button>
             </div>

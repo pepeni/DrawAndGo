@@ -3,6 +3,7 @@
 use models\Loceve;
 require_once __DIR__ . '/../models/Loceve.php';
 require_once __DIR__ . '/../repository/LoceveRepository.php';
+require_once __DIR__ . '/../repository/RatingRepository.php';
 
 class UploadController extends AppController
 {
@@ -88,6 +89,30 @@ class UploadController extends AppController
                 $this->loceveRepository->deleteIWasThere($decoded['loceve']);
             } else{
                 $this->loceveRepository->addIWasThere($decoded['loceve']);
+            }
+
+
+            header('Content-type: application/json');
+            http_response_code(200);
+
+            echo json_encode('Changed');
+        }
+    }
+
+    public function userRating(){
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]): '';
+
+
+        if($contentType === "application/json"){
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+            $ratingRepository = new RatingRepository();
+
+
+            if($ratingRepository->checkRating($decoded['loceve'])){
+                $ratingRepository->changeRating($decoded['loceve'], $decoded['rating']);
+            } else{
+                $ratingRepository->addRating($decoded['loceve'], $decoded['rating']);
             }
 
 

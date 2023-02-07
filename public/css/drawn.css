@@ -154,7 +154,7 @@ body {
     margin: 0;
 }
 
-#user-rating {
+#user-rating-text {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 300;
@@ -257,7 +257,7 @@ body {
 }
 
 .star{
-    width: 4vh;
+    width: 4vmin;
 }
 
 #i-was-there{
@@ -277,6 +277,7 @@ body {
     margin-right: 10vw;
     font-size: 1.8vmin;
 }
+
 
 @media only screen and (max-device-width: 940px) {
 
@@ -439,7 +440,7 @@ body {
         margin: 0;
     }
     
-    #user-rating {
+    #user-rating-text {
         font-family: 'Inter';
         font-style: normal;
         font-weight: 300;
@@ -480,7 +481,7 @@ body {
         justify-content: center;
         align-items: center;
     }
-    
+
     
     #rating-div {
         display: flex;
@@ -538,12 +539,13 @@ body {
     .rating{
         display: flex;
         flex-direction: row;
-    
+
     }
     
     .star{
-        width: 5vh;
+        width: 5vmin;
     }
+
     
     #i-was-there{
         background: #7EBB4A;
