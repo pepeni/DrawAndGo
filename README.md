@@ -62,3 +62,4 @@ docker-compose up
 # Database
 
 ![](./db/diagramERD.png)
+
