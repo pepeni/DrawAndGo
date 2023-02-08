@@ -5,7 +5,6 @@
     <link rel="stylesheet" type="text/css" href="public/css/browse.css">
     <script type="text/javascript" src="public/js/search.js" defer></script>
     <script type="text/javascript" src="public/js/iWasThere.js" defer></script>
-    <script type="text/javascript" src="public/js/communityRating.js" defer></script>
     <title>BROWSE</title>
 </head>
 <body>

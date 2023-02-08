@@ -36,7 +36,7 @@ class UploadController extends AppController
             );
             $this->messages[] = 'Loceve added successfully';
 
-            $loceve = new Loceve($_POST['name'], $_POST['description'], $_FILES['file']['name'], $_POST['website'], $_POST['price'], 0, $_POST['choice']==="event");
+            $loceve = new Loceve($_POST['name'], $_POST['description'], $_FILES['file']['name'], $_POST['website'], $_POST['price'], 0, $_POST['choice']==="event", 0);
             $this->loceveRepository->addLoceve($loceve);
             return $this->render('upload', ["messages" => $this->messages, 'loceve' => $loceve]);
             //return $this->render('drawn', ['loceve' => $loceve]);
