@@ -49,10 +49,6 @@ body {
     margin-right: 5vw;
 }
 
-#price-img {
-    width: 10vw;
-}
-
 #back{
     height: 5vh;
     margin-left: 10vw;
@@ -282,30 +278,10 @@ body {
 @media only screen and (max-device-width: 940px) {
 
     .container {
-        width: 100vw;
         height: auto;
-        background: #DAC827;
-    
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-    }
-    
-    body {
-        margin: 0;
-    }
-    
-    #container-top {
-        margin-top: 3vh;
-        width: 100vw;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
     }
     
     #container-bot {
-        width: 100vw;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -326,22 +302,13 @@ body {
     }
     
     #right {
-        margin-left: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
         width: 90vw;
-        margin-right: 5vw;
         margin-left: 5vw;
-    }
-    
-    #price-img {
-        width: 10vw;
     }
     
     #back{
         height: 5vh;
-        margin-left: 10vw;
+        margin-left: 6vw;
         width: 40vw;
         font-size: 5vh;
     }
@@ -372,7 +339,7 @@ body {
     
     #nick { 
         height: 5vh;
-        width: 40vw;
+        width: 44vw;
         margin-right: 10vw;
         font-size: 5vh;
         text-align: right;
@@ -505,61 +472,18 @@ body {
         width: 10vmin;
     }
     
-    .price {
-        margin: 0;
-    }
-    
-    #price{
-        display: flex;
-        flex-direction: row;
-    }
-    
-    #price-div {
-        background: #2F4858;
-        border-radius: 25px;
-        margin-left: 5vw;
-        height: 8vh;
-        width: 24vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    
-    #webpage {
-        height: 10vh;
-        margin-bottom: 2vh;
-        margin-top: 2vh;
-    }
-    
-    #community-rating{
-        height: 10vh;
-    }
-    
-    .rating{
-        display: flex;
-        flex-direction: row;
-
-    }
-    
     .star{
         width: 5vmin;
     }
 
     
     #i-was-there{
-        background: #7EBB4A;
-        border-radius: 25px;
-        height: 4vh;
         width: 40vw;
         margin-right: 5vw;
         font-size: 4vmin;
     }
 
     #i-was-not-there{
-        background: #DAC827;
-        border-radius: 25px;
-        height: 4vh;
         width: 40vw;
         margin-right: 5vw;
         font-size: 4vmin;

@@ -26,35 +26,8 @@
             <p id="setting-text">Ustawienia</p>
             <img src="public/img/settings.svg" id="setting-img">
         </div>
-        <div id="prices">
-            <p id="prices-text">Ceny</p>
-            <button class="price-button" id="free">
-                <p class="price">Za Darmo</p>
-                <img src="public/img/free_icon.svg" class="price-img">
-            </button>
-            <button class="price-button" id="low">
-                <p class="price">Niskie</p>
-                <img src="public/img/coin.svg" class="price-img">
-            </button>
-            <button class="price-button" id="medium">
-                <p class="price">Średnie</p>
-                <img src="public/img/coin.svg" class="price-img">
-                <img src="public/img/coin.svg" class="price-img">
-            </button>
-            <button class="price-button" id="high">
-                <p class="price">Wysokie</p>
-                <img src="public/img/coin.svg" class="price-img">
-                <img src="public/img/coin.svg" class="price-img">
-                <img src="public/img/coin.svg" class="price-img">
-            </button>
-        </div>
-        <div id="draw-new">
-            <p id="draw-new-text">Losuj tylko nowe</p>
-            <button class="draw-new-button" id="draw-new-yes">tak</button>
-            <button class="draw-new-button" id="draw-new-no">nie</button>
-        </div>
+
         <div id="buttons">
-            <button class="end-button" id="reset-account">Resetuj konto</button>
             <a id="a-logout" href="/logout"><button class="end-button" id="logout" >Wyloguj</button></a>
         </div>
     </div>

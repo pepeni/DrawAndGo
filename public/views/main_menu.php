@@ -13,14 +13,6 @@
                 <img src="public/img/logo.svg">
                 <div id="logo-text">Draw & Go</div>
             </div>
-            <div id="wybierz-typ">
-                <p id="wybierz">Wybierz typ:</p>
-                <select id="wybor">
-                    <option value="option1">Lokalizacje</option>
-                    <option value="option2">Eventy</option>
-                    <option value="option3">Eventy i Lokalizacje</option>
-                  </select>
-            </div>
             <div id="info-account">
                 <p id="nick"><?php
                     echo $_SESSION['nick'];
