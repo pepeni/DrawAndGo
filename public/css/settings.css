@@ -166,7 +166,6 @@ body {
     height: 10vh;
     margin: 0;
     font-size: 2vw;
-    margin: 0;
 }
 
 .end-button {
@@ -174,7 +173,7 @@ body {
     height: 10vh;
     margin: 0;
     font-size: 2vw;
-    margin: 0;
+
 
     background: #2F4858;
     border: 1px solid #000000;
@@ -214,7 +213,7 @@ body {
 
     .end-button {
         font-size: 4vh;
-        width: 80%;
+        width: 80vw;
         margin:1vh;
         height: 9vh;
     }
@@ -276,7 +275,6 @@ body {
         margin-left: 2vw;
         margin-right: 2vw;
         font-size: 4vh;
-        margin: 0;
     }
 
     #back{

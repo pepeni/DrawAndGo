@@ -1,7 +1,6 @@
 .container {
     width: 100vw;
-    height: 100vh;
-    background: #DAC827;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
@@ -11,6 +10,7 @@
 
 body {
     margin: 0;
+    background-color: #DAC827;
 }
 
 #container-top {
@@ -138,6 +138,7 @@ body {
     color: #FFFFFF;
     width: 22vw;
     line-height: 2vh;
+    text-align: center;
 }
 
 #price-img {
@@ -160,6 +161,17 @@ body {
     width: 4vmin;
 }
 
+.star-selected{
+    width: 2vw;
+}
+
+.star-unselected{
+    width: 2vw;
+}
+
+
+
+
 #i-was-there{
     background: #7EBB4A;
     border-radius: 25px;
@@ -168,22 +180,97 @@ body {
     font-size: 1.8vmin;
 }
 
-@media only screen and (max-device-width: 940px) {
+#i-was-not-there{
+    background: #DAC827;
+    border-radius: 25px;
+    height: 4vh;
+    width: 12vw;
+    font-size: 1.8vmin;
+}
+
+#searchadd{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+}
+
+.search-bar{
+    height: 4vh;
+    width: 40vw;
+    margin-left: 0;
+    font-size: 3vmin;
+    line-height: 4vh;
+    border-radius: 25px;
+}
+
+.search-bar-center{
+    height: 4vh;
+    width: 40vw;
+    font-size: 3vmin;
+    line-height: 4vh;
+    border-radius: 25px;
+}
+
+.add-loceve{
+    height: 4vh;
+    width: 20vw;
+    margin-left: 20vw;
+    margin-right: 0;
+    font-size: 3vmin;
+    line-height: 4vh;
+    background-color: #2F4858;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.add-link:hover {
+    text-decoration: underline;
+}
+
+.add-link:visited {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.add-link:active {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.add-link:link {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+#link:hover {
+    text-decoration: underline;
+}
+
+#link:visited {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+#link:active {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+#link:link {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+@media only screen and (max-device-width: 800px) {
 
     #back{
-        height: 5vh;
         margin-left: 5vw;
         margin-right: 5vw;
-        width: 40vw;
-        font-size: 5vh;
     }
 
     #browse-text {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 5vh;
-        line-height: 5vh;
         margin: 2vh;
     }
 
@@ -194,7 +281,6 @@ body {
     #left {
         width: 30vw;
         margin-left: 5vw;
-        margin-right: 0vw;
     }
     
     #photo {
@@ -208,27 +294,18 @@ body {
     }
 
     #price-img {
-        width: 7vmin;
+        width: 4.5vh;
     }
 
     #community-rating {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
         height: 5vh;
         width: 100%;
         margin-left: 5vw;
     }
     
     #record-name {
-        text-align: center;
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 300;
         font-size: 4vmin;
         line-height: 4vmin;
-        color: #FFFFFF;
         margin-bottom: 1vh;
         width: 90%;
     }
@@ -237,21 +314,26 @@ body {
         border-radius: 25px;
         height: 7vmin;
         width: 20vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
     
     .star{
         width: 5vmin;
     }
+
+    .star-selected{
+        width: 5vmin;
+    }
+
+    .star-unselected{
+        width: 5vmin;
+    }
     
     #i-was-there{
-        background: #7EBB4A;
-        border-radius: 25px;
-        height: 4vh;
         width: 70%;
-        font-size: 1.8vmin;
+    }
+
+    #i-was-not-there{
+        width: 70%;
     }
 }

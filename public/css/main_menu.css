@@ -80,10 +80,6 @@ img {
     margin: 0;
 }
 
-#achievements {
-    font-size: 1.5vw;
-    margin: 0;
-}
 
 
 
@@ -149,24 +145,18 @@ img {
 @media only screen and (max-device-width: 940px) {
 
     #container-top {
-        margin-top: 3vh;
         height: 20vh;
         flex: none;
         justify-content: center;
         align-items: flex-start;
     }
-    #container-bottom { 
-    
-        height: 75vh;
+    #container-bottom {
         flex-direction: column;
     }
     
     #logo {
         width: 20vw;
-        text-align: center;
-        margin-left: 40vw;
         margin-right: 0vw;
-        padding: 0;
     }
 
     img {
@@ -175,69 +165,36 @@ img {
     }
     
     #logo-text {
-        font-family: 'Inter';
-        font-style: normal;
         font-weight: 200;
         font-size: 2vh;
         line-height: 2vh;
-        text-align: center;
-    
-        color: #000000;
     }
     
     #wybierz-typ{
-        margin-left: 5vw;
-        margin-right: 5vw;
         position:absolute;
         top: 16vh;
-    }
-    
-    #wybierz {
-        font-size: 2vw;
-        margin: 1vh;
-        font-weight: 600;
     }
     
     #info-account{
         margin-left: 8vw;
         margin-right: 12vw;
         width: 20vw;
-        text-align: right;
     }
     
     #nick {
         font-size: 5vh;
     }
     
-    #achievements {
-        font-size: 0;
-    }
-    
     #wybor{
         width: 70vw;
-        height: 7vh;
-        background: url(/public/img/arrow_down.svg), radial-gradient(98.1% 98.1% at 50% 50%, #7EBB4A 0%, rgba(126, 187, 74, 0) 100%);
-        border-radius: 25px;
-        font-size: 4vh;
-        text-align: center;
-        appearance: none;
-    
-        background-repeat: no-repeat;
-        background-position-x: 95%;
-
-    
     }
     
     
     .bot-title {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 500;
+
         font-size: 7vw;
         line-height: 5vh;
-        text-align: center;
-    
-        color: #000000;
+
         margin-right: 5vw;
 
         position: absolute;
@@ -260,28 +217,5 @@ img {
         text-align: center;
         justify-content: center;
     }
-    
-    #options {
-        background: url(/public/img/wdpai4.png);
-        border-radius: 25px;
-        background-size: cover;
-        background-position: center;
-    }
-    
-    #draw {
-        background: url(/public/img/wdpai7.jpg);
-        border-radius: 25px;
-        background-size: cover;
-        background-position: center;
-    }
-    
-    #checkout {
-        background: url(/public/img/wdpai8.jpg);
-        border-radius: 25px;
-        background-size: cover;
-        background-position: center;
-    }
-
-    
 
 }
