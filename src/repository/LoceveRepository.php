@@ -37,10 +37,14 @@ class LoceveRepository extends Repository
 
     public function getLoceveByName(string $name): ?Loceve
     {
+        $userRepository = new UserRepository();
+        $userId = $userRepository->getUserId($_SESSION['nick']);
+
         $stmt = $this->database->connect()->prepare('
-                SELECT * FROM schema.loceves LEFT JOIN schema.were_there on id_loceve = loceves.id WHERE loceves.name = :name
+                SELECT * FROM schema.loceves LEFT JOIN schema.were_there on id_loceve = loceves.id AND id_user = :id_user WHERE loceves.name = :name
         ');
         $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+        $stmt->bindParam(':id_user', $userId, PDO::PARAM_INT);
         $stmt->execute();
 
         $loceve = $stmt->fetch(PDO::FETCH_ASSOC);
