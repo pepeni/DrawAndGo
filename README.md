@@ -1,7 +1,6 @@
 
 <p align="center">
 <img src="https://github.com/pepeni/DrawAndGo/blob/master/public/img/logo.svg" width="200" height="200">
-DRAW AND GO
 </p>
 
 # DRAW AND GO
