@@ -145,7 +145,7 @@ img {
 @media only screen and (max-device-width: 940px) {
 
     #container-top {
-        height: 20vh;
+        height: 10vh;
         flex: none;
         justify-content: center;
         align-items: flex-start;

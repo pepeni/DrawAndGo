@@ -63,3 +63,8 @@ docker-compose up
 
 ![](./db/diagramERD.png)
 
+# SCREENS, SQL SCRIPT
+
+- Screenshots of the running program available in the folder 'screens'
+- SQL script available in the folder 'db'
+
