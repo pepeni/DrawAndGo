@@ -16,10 +16,8 @@ for (let i = 0; i < stars.length; i++) {
             body: JSON.stringify({loceve: loceve, rating: rating})
         })
             .then(function (response){
-                console.log( response);
             });
 
-        console.log(loceve);
         let j;
         for (j = 0; j < rating; j++) {
             stars[j].innerHTML = '<img class="star" src="public/img/star_selected.svg">';

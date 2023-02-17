@@ -47,4 +47,4 @@ function validateNick(){
         1500);
 }
 
-passwordInput.addEventListener('keyup', validateNick);
+nickInput.addEventListener('keyup', validateNick);

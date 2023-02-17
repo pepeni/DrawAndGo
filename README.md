@@ -63,8 +63,28 @@ docker-compose up
 
 ![](./db/diagramERD.png)
 
-# SCREENS, SQL SCRIPT
+# SQL SCRIPT
 
 - Screenshots of the running program available in the folder 'screens'
 - SQL script available in the folder 'db'
 
+# SCREENSHOTS
+
+- Login
+  ![](./ss/loginPC.png)
+  ![](./ss/loginMobile.png)
+
+- Register
+  ![](./ss/registerPC.png)
+  ![](./ss/registerMobile.png)
+
+- Browse
+  ![](./ss/browsePCAdmin.png)
+  ![](./ss/browseMobileAdmin.png)
+
+- Draw
+  ![](./ss/drawPC.png)
+  ![](./ss/DrawMobile1.png)
+  ![](./ss/DrawMobile2.png)
+
+- More screenshots of the running program available in the folder 'ss'
