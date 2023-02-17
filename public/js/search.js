@@ -24,7 +24,6 @@ search.addEventListener("keyup", function (event) {
 
 function loadLoceves(loceves) {
     loceves.forEach(loceve => {
-        console.log(loceve);
         createLoceve(loceve);
     })
 }

@@ -2,7 +2,6 @@
 function iWasThere(e, loceve) {
 
     e.preventDefault();
-    console.log(loceve);
 
     fetch('/iWasThere', {
         method: 'post',
